@@ -1,0 +1,244 @@
+@keyframes pulse_bold {
+	0% {
+		transform: scale(1);
+                font-weight: 500;
+                color: #000;
+	}
+
+	50% {
+		transform: scale(1.025);
+                font-weight: 600;
+	}
+
+	100% {
+		transform: scale(1);
+                font-weight: 500;
+                color: #000;
+	}
+}
+
+@keyframes sweep {
+    0% {
+        background-position: -130% -130%;
+    }
+  
+    100% {
+        background-position: 230% 230%;
+    }
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  --sb-track-color: #00253e;
+  --sb-thumb-color: #78fa64;
+  --sb-size: 14px;
+  background: linear-gradient(300deg,#00253e,#00121d,#00253e);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+*::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+
+*::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 4px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
+ul.top-menu > li > a {
+    color: #78FA64;
+}
+
+a.signOnOffButton:not([href]):not([tabindex]) {
+    text-transform: capitalize;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    color: #000000;
+    border-radius: 32px;
+    border: none;
+    background: #78FA64 -webkit-linear-gradient(left, #78FA64, #fff) no-repeat 0 0 / 30px;
+    animation: sweep 3.5s linear infinite normal forwards;
+    padding: 12px 24px;
+    font-weight: bold;
+    font-size: 20px;
+    align-self: center;
+    justify-self: flex-start;
+}
+
+.segmentedButton:last-child {
+    border-right: none;
+    margin-right: 0;
+    background-color: #c9ffc1;
+    transition: background-color 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0s;
+}
+
+.segmentedButton:last-child:hover {
+    border-right: none;
+    margin-right: 0;
+    background-color: #78FA64;
+    color: #000;
+}
+
+#waitingForConnection .fadedBackground, #privacyStatement .fadedBackground, .notConfirmed, #noValidLicense .fadedBackground {
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 85%);
+    opacity: 0.9;
+    z-index: 10999;
+    backdrop-filter: blur(10px);
+}
+
+a.floatingActionButton:not([href]):not([tabindex]) {
+    text-transform: capitalize;
+    display: none;
+    align-content: center;
+    align-items: center;
+    color: #fff;
+    position: fixed;
+    z-index: 999;
+    bottom: 5%;
+    right: 5%;
+    border-radius: 16px;
+    border: none;
+    background-color: #FF9800;
+    padding: 24px;
+    font-size: 40px;
+    align-self: center;
+    justify-self: center;
+}
+
+.textheader h1 {
+    margin-top: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    grid-row: 1;
+    font-weight: bold;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-family: SuisseIntl, -apple-system, blinkmacsystemfont, Segoe UI, Roboto, Helvetica Neue, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol;
+}
+
+.names {
+    font-family: SuisseIntl, -apple-system, blinkmacsystemfont, Segoe UI, Roboto, Helvetica Neue, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol;
+    font-size: 1em;
+    font-weight: 500;
+    color: #000;
+    /* background-color: transparent; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.subhead div .totalPersonsPresentStyle {
+    display: flex
+;
+    flex-grow: 0;
+    margin-right: 4px;
+    font-family: SuisseIntl, -apple-system, blinkmacsystemfont, Segoe UI, Roboto, Helvetica Neue, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol;
+    font-weight: 700;
+}
+
+a.fabSignOnOffButton:not([href]):not([tabindex]), a.floatingActionButton:not([href]):not([tabindex]) {
+    text-transform: capitalize;
+    display: none;
+    align-content: center;
+    align-items: center;
+    color: #000;
+    position: fixed;
+    z-index: 999;
+    bottom: 5%;
+    right: 5%;
+    border-radius: 16px;
+    border: none;
+    background-color: #78FA64;
+    padding: 24px;
+    font-size: 40px;
+    align-self: center;
+    justify-self: center;
+    /*visibility: hidden;*/
+}
+.modal-title {
+    margin-bottom: 0;
+    line-height: var(--bs-modal-title-line-height);
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-family: SuisseIntl, -apple-system, blinkmacsystemfont, Segoe UI, Roboto, Helvetica Neue, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol;
+    color: #000;
+}
+#signInOnLocation .modal-body.normal p {
+    margin-bottom: 0;
+    color: #000;
+    font-family: SuisseIntl, -apple-system, blinkmacsystemfont, Segoe UI, Roboto, Helvetica Neue, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol;
+    font-weight: 500;
+    animation: pulse_bold 1s ease 0s infinite normal forwards;
+}
+
+.itemList .userLink, .itemList .locationLink {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 50px;
+    font-size: 18px;
+    margin: 5px 0;
+    border: solid 1px #dedede;
+    padding: 10px;
+    cursor: pointer;
+    color: #000;
+    letter-spacing: normal;
+    font-family: SuisseIntl, -apple-system, blinkmacsystemfont, Segoe UI, Roboto, Helvetica Neue, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+    border: solid 2px #78fa64;
+    border-radius: 7px;
+    color: #78fa64;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: SuisseIntl, -apple-system, blinkmacsystemfont, Segoe UI, Roboto, Helvetica Neue, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol;
+}
+
+* {
+  --sb-track-color: #00253e;
+  --sb-thumb-color: #78fa64;
+  --sb-size: 14px;
+}
+
+svg:not(:host).svg-inline--fa, svg:not(:root).svg-inline--fa {
+    overflow: visible;
+    box-sizing: content-box;
+    color: anim;
+}
